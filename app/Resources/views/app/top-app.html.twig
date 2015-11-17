@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div ng-app='TopApp'>	
+	<div ng-view>
+	</div>
+	<button ng-click='back()'>Back</button>
+</div>
+{% endblock %}

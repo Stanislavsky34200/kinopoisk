@@ -1,0 +1,11 @@
+
+
+                                                                                                 
+  [Doctrine\Common\Proxy\Exception\UnexpectedValueException]                                     
+  Your proxy directory "/var/www/kinopoisk/app/cache/dev/doctrine/orm/Proxies" must be writable  
+                                                                                                 
+
+
+kinopoisk:parse [--rewrite] [--] [<date>]
+
+

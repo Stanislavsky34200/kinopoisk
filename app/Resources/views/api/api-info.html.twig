@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	{% for apiName, api in apis %}
+		<table>
+			<tr class='table-header'>
+				<th> Api name </th>
+				<th> Api path </th>
+			</tr>
+			<tr>
+				<td> {{ apiName }} </td>
+				<td> {{ api['path'] }} </td>
+			</tr>
+			{% if api['params'] is defined and api['params'] is not empty %}
+				<tr>				
+					<table>
+						<tr>
+							<th> Parameter name </th>
+							<th> Parameter type </th>
+							<th> Parameter description </th>
+						</tr>
+						{% for paramName,param in api['params'] %}
+							<tr>
+								<td>{{ paramName }}</td>
+								<td>{{ param['type']|default('any') }}</td>
+								<td>{{ param['decription']|default('No description') }}</td>
+							</tr>
+						{% endfor %} 
+					</table>
+				</tr>
+			{% endif %}
+		</table>				
+	{% endfor %}
+{% endblock %}

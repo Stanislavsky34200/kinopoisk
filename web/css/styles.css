@@ -1,0 +1,27 @@
+.content
+{
+	margin: 0 auto;
+	width: 60%;
+}
+.content a
+{
+	color: #444;
+	font-weight: bold;
+	text-decoration: none;
+}
+.content a:visited
+{
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+.error
+{
+	margin: 14px;
+	padding: 15px;
+	color: red;
+	border-color: red;
+	background-color: rgba(255,0,0,0.3);
+	border-style: solid;
+	text-align: center;
+}

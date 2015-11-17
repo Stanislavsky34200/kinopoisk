@@ -1,0 +1,21 @@
+<div class='error' ng-show='filmCtrl.errorMessage'>{{filmCtrl.errorMessage}}</div>
+<div ng-show='filmCtrl.film'>
+	<div class='film-wrapper'>
+		<div>{{filmCtrl.film.name|html}} <span style='color: darkgrey' ng-show='filmCtrl.film.originalName'>{{filmCtrl.film.originalName|html}}</span> ({{filmCtrl.film.year}})</div>
+	</div>
+		<div><a ng-href='http://kinopoisk.ru/film/{{filmCtrl.film.kinopoiskId}}'>Kinopoisk link</a></div>
+	<div class='statistics-wrapper'>
+		<table>
+			<tr>
+				<th>Date</th>
+				<th>Votes</th>
+				<th>Raiting</th>
+			</tr>
+			<tr ng-repeat='position in filmCtrl.statistics'>
+				<td>{{position.date}}</td>
+				<td>{{position.votes}}</td>	
+				<td>{{position.raiting}}</td>	
+			</tr>
+		</table>
+	</div>
+</div>

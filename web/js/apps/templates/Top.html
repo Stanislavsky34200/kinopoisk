@@ -1,0 +1,16 @@
+<div class='app'>
+	<div ng-show='topCtrl.errorMessage' class='error'>{{topCtrl.errorMessage}}</div>
+		<form name='dateForm' ng-submit='topCtrl.getTop()'>
+			<input type='date' ng-model='topCtrl.date' placeholder='yyyy-MM-dd' max='{{currentDate|date:"yyyy.MM.dd"}}'></input>
+			<button  ng-disabled="dateForm.$invalid" >Show top</button>
+		</form>
+	<div>
+		<div ng-repeat='position in topCtrl.topPositions' class='top-position'>
+			<div>{{position.place}}. <a ng-href="#/film/{{position.film.id}}">{{position.film.name|html}} <span style='color: darkgrey' ng-show='position.film.originalName'>{{position.film.originalName|html}}</span> ({{position.film.year}})</a></div>
+			<div class='statistics'>
+				<div>Raiting: {{position.raiting}} <span ng-class='{"color-red": position.delta_raiting < 0, "color-green": position.delta_raiting > 0,}'  ng-show='position.delta_raiting'>Delta: {{position.delta_raiting|number:3}}</span></div>
+				<div>Votes: {{position.votes}} <span class='color-green' ng-show='position.delta_votes'>Delta: {{position.delta_votes}}</span></div>		
+			</div>		
+		</div>
+	</div>
+</div>
